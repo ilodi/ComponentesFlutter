@@ -15,6 +15,7 @@ class HomePagesTemp extends StatelessWidget {
     );
   }
 
+//Metodo largo
   List<Widget> _crearItems() {
     List<Widget> lista = new List<Widget>();
 
@@ -38,7 +39,7 @@ class HomePagesTemp extends StatelessWidget {
             subtitle: Text('Arreglo'),
             leading: Icon(Icons.adb),
             trailing: Icon(Icons.arrow_forward_ios),
-            onTap: (){},
+            onTap: () {},
           ),
           Divider()
         ],

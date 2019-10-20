@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './src/routes/routes.dart';
-
+import './src/pages/home_page.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 //Rutas dinamicas cuando no esta definida se dispara esta accion
       onGenerateRoute: (settings) {
         return MaterialPageRoute(
-          builder: (BuildContext context) => AlertPage(),
+          builder: (BuildContext context) => HomePage(),
         );
       },
     );
