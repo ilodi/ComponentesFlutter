@@ -73,7 +73,7 @@ class CardPages extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20.0),
-        color: Colors.lightBlue,
+        color: Colors.white,
         boxShadow: <BoxShadow>[
           BoxShadow(
               color: Colors.black26,
