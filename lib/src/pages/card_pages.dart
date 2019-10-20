@@ -20,6 +20,8 @@ class CardPages extends StatelessWidget {
 
   Widget _crearTipo1() {
     return Card(
+      elevation: 2.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(0.0)),
       child: Column(
         children: <Widget>[
           ListTile(
@@ -48,21 +50,39 @@ class CardPages extends StatelessWidget {
   }
 
   Widget _cardTipo2() {
-    return Card(
+    final card = Container(
+      // clipBehavior: Clip.antiAlias,
       child: Column(
         children: <Widget>[
-
           FadeInImage(
-            image:  NetworkImage('https://wallpaperplay.com/walls/full/5/4/f/34814.jpg'),
+            image: NetworkImage(
+                'https://wallpaperplay.com/walls/full/4/4/e/34840.jpg'),
             placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 200.0,
+            fit: BoxFit.cover,
           ),
-
-        Container(
-          padding: EdgeInsets.all(10.0),
-          child:   Text('I love 80s'),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('I love 80s'),
           )
         ],
       ),
+    );
+
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20.0),
+        color: Colors.lightBlue,
+        boxShadow: <BoxShadow>[
+          BoxShadow(
+              color: Colors.black26,
+              blurRadius: 20.0,
+              spreadRadius: 2.0,
+              offset: Offset(10.0, 10.0))
+        ],
+      ),
+      child: ClipRRect(borderRadius: BorderRadius.circular(20.0), child: card),
     );
   }
 }
