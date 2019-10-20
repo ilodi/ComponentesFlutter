@@ -16,6 +16,7 @@ class HomePagesTemp extends StatelessWidget {
   }
 
 //Metodo largo
+/*
   List<Widget> _crearItems() {
     List<Widget> lista = new List<Widget>();
 
@@ -28,7 +29,7 @@ class HomePagesTemp extends StatelessWidget {
     }
     return lista;
   }
-
+**/
 //Metodo corto regresa una nueva lista
   List<Widget> _crearItemsCorta() {
     return opciones.map((item) {
