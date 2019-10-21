@@ -2,7 +2,6 @@ import 'package:componentes/src/utils/icono_string_util.dart';
 import 'package:flutter/material.dart';
 import '../providers/menu_provider.dart';
 
-
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,6 +22,7 @@ class HomePage extends StatelessWidget {
       builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
         return ListView(
           children: _listaItems(snapshot.data, context),
+          
         );
       },
     );

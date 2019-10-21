@@ -56,7 +56,7 @@ class CardPages extends StatelessWidget {
         children: <Widget>[
           FadeInImage(
             image: NetworkImage(
-                'https://wallpaperplay.com/walls/full/4/4/e/34840.jpg'),
+                'https://wallpaperplay.com/walls/full/5/c/2/34799.jpg'),
             placeholder: AssetImage('assets/jar-loading.gif'),
             fadeInDuration: Duration(milliseconds: 200),
             height: 200.0,
