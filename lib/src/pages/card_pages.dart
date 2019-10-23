@@ -38,7 +38,7 @@ class CardPages extends StatelessWidget {
                 onPressed: () {},
               ),
               FlatButton(
-                child: Text('Ok'),
+                child: Icon(Icons.airline_seat_flat_angled),
                 color: Colors.teal,
                 onPressed: () {},
               )
@@ -55,6 +55,7 @@ class CardPages extends StatelessWidget {
       child: Column(
         children: <Widget>[
           FadeInImage(
+
             image: NetworkImage(
                 'https://wallpaperplay.com/walls/full/5/c/2/34799.jpg'),
             placeholder: AssetImage('assets/jar-loading.gif'),

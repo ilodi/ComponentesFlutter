@@ -18,10 +18,12 @@ class _AnimatedContainerPagesState extends State<AnimatedContainerPages> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Animated Flutter <3'),
+         elevation: 0.0,
+         backgroundColor: Colors.brown,
       ),
       body: Center(
           child: AnimatedContainer(
-        duration: Duration(milliseconds: 1200),
+        duration: Duration(milliseconds: 2000),
         curve: Curves.fastLinearToSlowEaseIn,
         width: _width,
         height: _height,
