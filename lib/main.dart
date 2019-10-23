@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
 import './src/routes/routes.dart';
 import './src/pages/home_page.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,10 +12,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Material App',
       debugShowCheckedModeBanner: false,
-      //home: HomePage(),
+      localizationsDelegates: [
+        // ... app-specific localization delegate[s] here
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', 'US'),
+        const Locale('es', 'ES'),
+      ],
       initialRoute: '/',
       //Rutas
-      routes: getApplicationRoutes() ,
+      routes: getApplicationRoutes(),
 //Rutas dinamicas cuando no esta definida se dispara esta accion
       onGenerateRoute: (settings) {
         return MaterialPageRoute(
