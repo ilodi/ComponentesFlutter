@@ -52,22 +52,40 @@ class _ListViewPageState extends State<ListViewPage> {
   }
 
   Widget _crearLista() {
-    return ListView.builder(
-      controller: _scrollController,
-      itemCount: _listaNum.length,
-      itemBuilder: (BuildContext context, int index) {
-        final imagenIndex = _listaNum[index];
+    return RefreshIndicator(
+      // necesita un future para
+      onRefresh: obtenerPagina1,
+      // no poner () porque es un future y no se va  lazar por si solo
+      child: ListView.builder(
+        controller: _scrollController,
+        itemCount: _listaNum.length,
+        itemBuilder: (BuildContext context, int index) {
+          final imagenIndex = _listaNum[index];
 
-        return FadeInImage(
-          image:
-              NetworkImage('https://picsum.photos/550/300?image=$imagenIndex'),
-          placeholder: AssetImage('assets/jar-loading.gif'),
-          fadeInDuration: Duration(milliseconds: 200),
-          height: 200.0,
-          fit: BoxFit.contain,
-        );
-      },
+          return FadeInImage(
+            image: NetworkImage(
+                'https://picsum.photos/550/300?image=$imagenIndex'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration(milliseconds: 200),
+            height: 200.0,
+            fit: BoxFit.contain,
+          );
+        },
+      ),
     );
+  }
+
+//
+  Future<Null> obtenerPagina1() {
+    final duration = new Duration(seconds: 2);
+   new Timer(duration, () {
+      //Elimina los valores actuales
+      _listaNum.clear();
+      //carga ultimo item para usarlo como pibote y llamar 10 mas
+      _agregar10();
+    });
+  
+  return Future.delayed(duration);
   }
 
   //Metodo
@@ -109,8 +127,7 @@ class _ListViewPageState extends State<ListViewPage> {
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children:
-             <Widget>[ CircularProgressIndicator()],
+            children: <Widget>[CircularProgressIndicator()],
           ),
           SizedBox(height: 15.0),
         ],
